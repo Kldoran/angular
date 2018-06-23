@@ -1,0 +1,15 @@
+<form class="form-group" novalidate [formGroup]="reviewForm" (ngSubmit)="add()">
+  <label class="control-label">Review:
+<input class="form-control" type="text" name="content" formControlName="content"/>
+  </label>
+<button type="submit" class="btn btn-primary" [disabled]="!reviewForm.valid">Add Review</button>
+<div *ngIf="reviewForm.get('content').hasError('required') && !reviewForm.get('content').pristine" class="text-alert alert-danger">
+  content is required
+</div>
+<div *ngIf="reviewForm.get('content').hasError('minlength') && !reviewForm.get('content').pristine" class="text-alert alert-danger">
+  content must be at least 3 characters
+</div>
+<div *ngIf="reviewForm.get('content').hasError('pattern') && !reviewForm.get('content').pristine" class="text-alert alert-danger">
+  Only letters and numbers are allowed
+</div>
+</form>
