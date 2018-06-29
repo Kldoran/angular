@@ -21,7 +21,8 @@ import { ReviewsModule } from './reviews/reviews.module';
     BooksModule,
     AppRoutesModule,
     ReactiveFormsModule,
-    ReviewsModule
+    ReviewsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

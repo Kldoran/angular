@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import  { throwError } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class RestHelperService {
-
-    url: string = "http://localhost:3000/api/bookreactions/";
+    host: string = (environment.production) ? 'localhost:5555' : 'localhost:3000';
+    url: string = "http://" + this.host + "/api/bookreactions/";
     postHeaders = new HttpHeaders({
       'content-type': 'application/json'
     });

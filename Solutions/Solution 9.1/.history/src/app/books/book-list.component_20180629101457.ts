@@ -7,7 +7,9 @@ import { switchMap, debounceTime } from 'rxjs/operators';
 @Component({
     selector: 'book-list',
     templateUrl: './book-list.component.html',
-    styleUrls: ['./book-list.component.css']
+    styleUrls: ['./book-list.component.css'],
+    animations: [routeChange(), slideUp()],
+    host: { '[@routeChange]': '' }
 })
 export class BookListComponent {
     searchTermStream: BehaviorSubject < string > = new BehaviorSubject < string > ('');

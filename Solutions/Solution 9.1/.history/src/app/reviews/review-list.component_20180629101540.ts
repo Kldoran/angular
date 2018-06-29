@@ -8,7 +8,9 @@ import { ReviewService } from '../reviews/review.service';
 @Component({
     selector: 'app-review-list',
     templateUrl: './review-list.component.html',
-    styleUrls: ['./review-list.component.css']
+    styleUrls: ['./review-list.component.css'],
+    animations: [routeChange()],
+    host: { '[@routeChange]': '' }
 })
 export class ReviewListComponent implements OnInit {
     bookId: number = -1;

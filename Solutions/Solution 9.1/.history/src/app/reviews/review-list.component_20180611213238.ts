@@ -4,11 +4,14 @@ import Book from '../models/book';
 import Review from '../models/review';
 import { BookService } from '../books/book.service';
 import { ReviewService } from '../reviews/review.service';
+import { routeChange } from '../common/animations';
 
 @Component({
     selector: 'app-review-list',
     templateUrl: './review-list.component.html',
-    styleUrls: ['./review-list.component.css']
+    styleUrls: ['./review-list.component.css'],
+    animations: [routeChange()],
+    host: { '[@routeChange]': '' }
 })
 export class ReviewListComponent implements OnInit {
     bookId: number = -1;

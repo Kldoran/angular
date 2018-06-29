@@ -21,7 +21,7 @@
                                 <input #term (keyup)="search(term.value)" />
                             </label>
                         </td>
-<tr  *ngFor="let book of books | async; trackBy:trackBook">
+<tr [@slideUp] *ngFor="let book of books | async; trackBy:trackBook">
                             <td>
                                 <a [routerLink]="['/reviews/' + book.bookId]">{{book.title}}</a>
                             </td>
